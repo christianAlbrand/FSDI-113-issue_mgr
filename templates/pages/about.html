@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock title %}
+
+{% block content %}
+<div class="img-fix">
+    <div class="img-container">
+        <img class="profilePic" src="{% static 'img/profileImg.jpg' %}">
+    </div>
+    <div>
+        <h1>About</h1>
+        <p>
+            Christian Albrand, a 19-year-old software engineering student with a passion for exploring the latest
+            technological advancements. Christian’s dedication to discovering new innovations fuels his work, including the
+            creation of this task manager. His journey reflects a deep curiosity for technology and a commitment to applying
+            cutting-edge solutions to everyday challenges. Get to know the developer behind the app and the inspiration that
+            drives his pursuit of progress in the tech world!
+        </p>
+    </div>
+</div>
+{% endblock content %}

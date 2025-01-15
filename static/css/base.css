@@ -1,0 +1,98 @@
+/* Dracula Theme CSS */
+:root {
+    --dracula-background: #282a36;
+    --dracula-current-line: #44475a;
+    --dracula-foreground: #f8f8f2;
+    --dracula-comment: #6272a4;
+    --dracula-cyan: #8be9fd;
+    --dracula-green: #50fa7b;
+    --dracula-orange: #ffb86c;
+    --dracula-pink: #ff79c6;
+    --dracula-purple: #bd93f9;
+    --dracula-red: #ff5555;
+    --dracula-yellow: #f1fa8c;
+}
+
+body {
+    background-color: var(--dracula-background);
+    color: var(--dracula-foreground);
+}
+
+.navbar {
+    background-color: var(--dracula-current-line) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--dracula-foreground) !important;
+}
+
+.nav-link.active {
+    color: var(--dracula-green) !important;
+}
+
+.nav-link.disabled {
+    color: var(--dracula-comment) !important;
+}
+
+.container {
+    background-color: var(--dracula-current-line);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.navbar-toggler {
+    background-color: var(--dracula-purple);
+    border: none;
+}
+
+button.navbar-toggler span {
+    background-color: var(--dracula-foreground);
+}
+
+a {
+    color: var(--dracula-cyan);
+}
+
+a:hover {
+    color: var(--dracula-pink);
+    text-decoration: underline;
+}
+
+/* Utility Classes */
+.bg-dracula {
+    background-color: var(--dracula-current-line) !important;
+    color: var(--dracula-foreground) !important;
+}
+
+.text-dracula-green {
+    color: var(--dracula-green) !important;
+}
+
+.text-dracula-red {
+    color: var(--dracula-red) !important;
+}
+
+.text-dracula-yellow {
+    color: var(--dracula-yellow) !important;
+}
+
+.text-dracula-purple {
+    color: var(--dracula-purple) !important;
+}
+
+.profilePic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00000000;
+}
+
+.img-fix{
+    display: flex;
+}
+
+.img-container{
+    margin-right: 20px;
+    margin-top: 10px;
+}
