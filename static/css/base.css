@@ -96,3 +96,14 @@ a:hover {
     margin-right: 20px;
     margin-top: 10px;
 }
+
+.issue-img{
+    width: 500px;
+    height: 350px;
+    border-radius: 10%;
+    border: 3px solid rgba(0, 0, 0, 0.349);
+}
+
+.issue-img:hover{
+    border-color: #50fa7b;
+}

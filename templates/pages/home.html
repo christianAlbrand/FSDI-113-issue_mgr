@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home Page{% endblock title %}
 
 {% block content %}
-<h1>Home</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, alias? Ut sed exercitationem harum molestias sunt dolorum veritatis eaque est, libero magnam tempore cumque. Blanditiis accusantium assumenda rem iste eius!</p>
+<div>
+    <h1>Home</h1>
+    <p>
+        My issue manager page is a streamlined tool for tracking, managing, and resolving tasks efficiently. It offers features like issue creation, 
+        prioritization, and collaboration tools such as comments and notifications to enhance teamwork.
+    </p>
+</div>
+<div class="img-container">
+    <img class="issue-img" src="{% static 'img/issue.jpeg' %}" alt="">
+</div>
+
 {% endblock content %}
