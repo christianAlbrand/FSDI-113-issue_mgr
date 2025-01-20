@@ -104,6 +104,69 @@ a:hover {
     border: 3px solid rgba(0, 0, 0, 0.349);
 }
 
-.issue-img:hover{
-    border-color: #50fa7b;
+.h3-detail{
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display:inline-table;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.116);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.a-detail{
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.img-forbidden{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border-radius: 5%;
+}
+
+.img-forbidden:hover{
+    border: 4px solid black;
+}
+
+th{
+    border-right: 2px solid rgba(255, 255, 255, 0.356);
+    padding-right: 10px;
+}
+
+td{
+    padding-left: 10px;
+}
+
+table{
+    font-size: x-large;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.692);
+}
+
+.list-link{
+    color: rgb(6, 49, 141);
+}
+
+.list-link:hover{
+    color: black;
+}
+
+.form-text{
+    color: white;
 }

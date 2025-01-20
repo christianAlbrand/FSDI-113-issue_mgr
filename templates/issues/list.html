@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Issues{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-white">{{ title }} Issues</h1>
+    <div class="row">
+        {% for issue in issue_list %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-subtitle mb-2 text-body-secondary">
+                        Issue name: {{ issue.name }} | Priority Level: {{ issue.priority_level }} | {{ issue.created_on }}
+                    </p>
+                    <h5 class="card-title">Issue Summary: {{ issue.summary }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Reporter: {{ issue.reporter }}</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Assignee: {{ issue.assignee }}</h6>
+                    <p class="card-text">{{ issue.body|truncatechars:64 }}</p>
+                    <a class="list-link card-link" href="{% url 'detail' issue.id %}">More Details...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

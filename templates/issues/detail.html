@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ issue.name }}{% endblock title %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Issue name: {{ issue.name }}</h1>
+    <hr>
+    <table>
+        <tr>
+            <th>Issue Description:</th>
+            <td>{{ issue.description }}</td>
+        </tr>
+        <tr>
+            <th>Reporter:</th>
+            <td>{{ issue.reporter }}</td>
+        </tr>
+        <tr>
+            <th>Assignee:</th>
+            <td>{{ issue.assignee }}</td>
+        </tr>
+        <tr>
+            <th>Issue Status:</th>
+            <td>{{ issue.status }}</td>
+        </tr>
+        <tr>
+            <th>Issue Priority:</th>
+            <td>{{ issue.priority_level }}</td>
+        </tr>
+        <tr>
+            <th>Created On:</th>
+            <td>{{ issue.created_on }}</td>
+        </tr>
+    </table>
+    <p>{{ issue.body }}</p>
+    {% if user.is_authenticated %}
+        {% if user.role.name == "developer" %}
+        <a class="a-detail" href="{% url 'edit' issue.id %}">Edit</a>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock content %}
