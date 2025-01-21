@@ -170,3 +170,7 @@ table{
 .form-text{
     color: white;
 }
+
+.user_class{
+    text-decoration: none;
+}

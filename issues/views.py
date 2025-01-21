@@ -3,7 +3,6 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
 )
 
 from .models import Issue, Status
@@ -13,17 +12,21 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
-class IssueListView(ListView):
+class IssueListView(ListView, UserPassesTestMixin):
     template_name = "issues/list.html"
     model = Issue
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        team_name = self.request.user.team.name
         published = Status.objects.get(name="Done")
         context["title"] = "Done"
         context["issue_list"] = (
             Issue.objects
-            .filter(status=published)
+            .filter(
+                status=published,
+                reporter__team__name =team_name
+                )
             .order_by("created_on").reverse()
         )
         return context
@@ -78,11 +81,16 @@ class IncompleteIssueView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        team_name = self.request.user.team.name
         incomplete = Status.objects.filter(name__in=["To Do", "In Progress"])
         context["title"] = "Incomplete Issues"
         context["issue_list"] = (
             Issue.objects
             .filter(status__in=incomplete)
+            .filter(
+                status__in=incomplete,
+                reporter__team__name =team_name
+                )
             .order_by("created_on")
         )
         return context

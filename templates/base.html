@@ -29,6 +29,7 @@
                     <a class="nav-link" href="{% url 'incomplete' %}">Incomplete Issues</a>
                     {% if user.is_authenticated %}
                     <a class="nav-link" href="{% url 'new' %}">New Issue</a>
+                    <a class="nav-link user_class">User: {{ user }} | Team: {{ request.user.team.name }}</a>
                     <form method="POST" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <input type="submit" class="nav-link" value="Log Out">
