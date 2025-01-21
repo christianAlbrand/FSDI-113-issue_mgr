@@ -12,7 +12,7 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
-class IssueListView(ListView, UserPassesTestMixin):
+class IssueListView(LoginRequiredMixin, ListView):
     template_name = "issues/list.html"
     model = Issue
 
